@@ -1,0 +1,13 @@
+<mat-toolbar class="bgHeader" color="primary">
+  <ul>
+    <a *ngIf="_userService.loggedIn()" routerLink="sendEmail">Send Email</a>
+  </ul>
+  <span class="headerspacer"></span>
+  <ul>
+    <a *ngIf="!_userService.loggedIn()" mat-button routerLink="singUp">sing up</a>
+    <a *ngIf="!_userService.loggedIn()" mat-button  routerLink="login">Login</a>
+    <a *ngIf="_userService.loggedIn()" (click)="logOut()" mat-button routerLink="logout">Logout</a>
+    
+
+  </ul>
+</mat-toolbar>
